@@ -122,3 +122,30 @@ router.get('/getStudent/:name', async (req, res) => {
         res.status(404).json({message: error.message})
     }
 })
+
+router.delete('/removeStudent/:id', async (req, res) => {
+   try {
+           const data = await Students.findOneAndDelete({ id: req.params.id })
+           res.send(`Student with id ${data.id} has been deleted..`)
+           console.log("data deleted")
+       }
+       catch (error) {
+           res.status(400).json({ message: error.message })
+    }
+})
+
+router.put('/updateStudent/:id', async (req, res) => {
+    try {
+        const updatedData = req.body;
+        const options = { new: true };
+
+        const result = await Students.findOneAndUpdate(
+            { id: req.params.id }, updatedData, options        
+        )
+        console.log("Student details changed")
+        res.send(result)
+    }
+    catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+})

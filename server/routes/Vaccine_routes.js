@@ -21,7 +21,8 @@ router.post('/newDrive', async (req, res) => {
     {
     try {
         const item = await Vaccine.find({ DriveDate: req.body.DriveDate  });
-        if ((!item)){
+        console.log(item);
+        if ((item.length==0)){
             const dataToSave = data.save();
             res.send(JSON.stringify({message: 'New vaccination schedule is created !' }));
             console.log("New vaccination schedule is created ")
