@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "326affd9-7d66-4598-819c-f1801ae0bae4",
+		"name": "VaccineDrive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44832658",
+		"_collection_link": "https://aditya-4817629.postman.co/workspace/aditya's-Workspace~70103821-419b-473a-8298-f7ef1a2678ed/collection/44832658-326affd9-7d66-4598-819c-f1801ae0bae4?action=share&source=collection_link&creator=44832658"
+	},
+	"item": [
+		{
+			"name": "getAllStudents",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Student/allStudents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Student",
+						"allStudents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOneStudent",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Student/getStudent/45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Student",
+						"getStudent",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getVaccinatedStudents",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Student/vaccinated",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Student",
+						"vaccinated"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getVaccinationCount",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Student/vaccinationCount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Student",
+						"vaccinationCount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStudentCount",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Student/studentCount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Student",
+						"studentCount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllDrives",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Vaccine/AllDrives",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Vaccine",
+						"AllDrives"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByDate",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Vaccine/Drive/date/2025-06-27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Vaccine",
+						"Drive",
+						"date",
+						"2025-06-27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByVaccineName",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Vaccine/Drive/vaccine/coronil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Vaccine",
+						"Drive",
+						"vaccine",
+						"coronil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpComingDrive",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Vaccine/Drive/vaccine/Schedule/Upcoming",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Vaccine",
+						"Drive",
+						"vaccine",
+						"Schedule",
+						"Upcoming"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateDriveByDate",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"Vname\": \"covovax\",\r\n        \"DriveDate\": \"2025-06-27\",\r\n        \"AvailableDoses\": \"350\",\r\n        \"ApplicableClass\": \"9th\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Vaccine/Drive/date/2025-06-27",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Vaccine",
+						"Drive",
+						"date",
+						"2025-06-27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDrivebyDate",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Vaccine/Drive/date/2025-05-10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Vaccine",
+						"Drive",
+						"date",
+						"2025-05-10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createNewDrvie",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"Vname\": \"Polio\",\r\n        \"DriveDate\": \"2025-07-08\",\r\n        \"AvailableDoses\": \"100\",\r\n        \"ApplicableClass\": \"8th\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Vaccine/newDrive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Vaccine",
+						"newDrive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addStudent",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"Sname\": \"Nancy\",\r\n        \"Sclass\": \"5th\",\r\n        \"id\": \"56\",\r\n        \"vaccineStatus\": \"NotVaccinated\",\r\n        \"vaccineDate\": \"NA\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Student/addStudent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Student",
+						"addStudent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteStudentById",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/Student/removeStudent/98",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Student",
+						"removeStudent",
+						"98"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateStudentById",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Sname\": \"zenya\",\r\n    \"Sclass\": \"2nd\",\r\n    \"id\": \"33\",\r\n    \"vaccineStatus\": \"NotVaccinated\",\r\n    \"vaccineDate\": \"NA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Student/updateStudent/33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Student",
+						"updateStudent",
+						"33"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
