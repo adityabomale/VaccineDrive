@@ -13,6 +13,7 @@ function NewDrive() {
   const base64Credentials = btoa(`${username}:${password}`);
   const handleSubmit = async (e) => { e.preventDefault();
         console.log('sending post req for new drive');
+        //post request to submit data entered by user from browser, along with basic auth headers
         axios.post('http://localhost:3000/Vaccine/newDrive', formData,{headers: {
             'Authorization': `Basic ${base64Credentials}`,'Content-Type': 'application/json'
       }})

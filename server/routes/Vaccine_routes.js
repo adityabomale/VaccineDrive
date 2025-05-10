@@ -4,7 +4,7 @@ const router = express.Router()
 
 module.exports = router;
   
-//Post Method
+//add/create new Vaccination Drive
 router.post('/newDrive', async (req, res) => {
     const data = new Vaccine({
         Vname: req.body.Vname,
@@ -16,7 +16,7 @@ router.post('/newDrive', async (req, res) => {
     const today = new Date();
     console.log(proposed_date);
     console.log(req.body.DriveDate);
-   
+   //check if proposed vaccination date is atleast 15 days in future
     if ((proposed_date - today)/(1000 * 3600 * 24) >=15 ) 
     {
     try {
@@ -41,7 +41,7 @@ router.post('/newDrive', async (req, res) => {
         }
 })
 
-//Get all Method
+//Get all Drives data
 router.get('/AllDrives', async (req, res) => {
     try{
         console.log(req.headers);
@@ -86,7 +86,7 @@ router.get('/Drive/vaccine/:vaccine', async (req, res) => {
     }
 })
 
-//Get data for upcoming drive
+//Get details for upcoming drive
 router.get('/Drive/vaccine/Schedule/Upcoming', async (req, res) => {
     try {
         //console.log(req.headers)
@@ -95,6 +95,7 @@ router.get('/Drive/vaccine/Schedule/Upcoming', async (req, res) => {
         let month = ('0' + (today.getMonth()+1)).slice(-2) 
         let year = today.getFullYear();
         current_date = `${year}-${month}-${day}`
+        //fetch very first upcoming date from future dates
         var item = await Vaccine.find({ DriveDate: {$gte: current_date },}).select('DriveDate -_id').sort({ DriveDate: 1 }).limit(1);
         console.log(item[0].DriveDate);
         if (item.length!=0) {

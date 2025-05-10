@@ -7,7 +7,7 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 
-
+//add basic authentication - pass basic auth headers to every CRUD operation in backend API calls
 const USERNAME = "admin";
 const PASSWORD = "password123";
     
@@ -32,10 +32,12 @@ const authHeader = req.headers["authorization"];
 
 app.use(cors());
 app.use(express.json());
+//start server on port 3000
 app.listen(3000, () => {
     console.log(`Server Started at ${3000}`)
 })
 
+//connect to mongoDB local instance on port 27017.
 mongoose.connect(dbConfig.url).then(() => {
     console.log("Successfully connected to the database");    
 }).catch(err => {

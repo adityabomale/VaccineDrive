@@ -10,7 +10,7 @@ const Dashboard = () => {
     const [dataenroll, setDataenroll] = useState([]) 
     const [upcomVac, setupcomVac] = useState([])   
     useEffect(() => {
-
+        //fetch upcoming vaccination drive date from database
         const fetchUpComVac = async () => {
             try {
               const Upcoming_Dates = await axios.get('http://localhost:3000/Vaccine/Drive/vaccine/Schedule/Upcoming',{headers: {
@@ -19,6 +19,7 @@ const Dashboard = () => {
                   console.log(Upcoming_Dates.upcomVac);        
             } catch(error){console.error('Error:', error);}
           } 
+        //fetch count of students vaccinated  
         const fetchVacData = async () => {
           try {
             const response_vaccine = await axios.get('http://localhost:3000/Student/vaccinationCount',{headers: {
@@ -27,6 +28,7 @@ const Dashboard = () => {
                 console.log(response_vaccine.datacount);        
           } catch(error){console.error('Error:', error);}
         } 
+        //fetch total enrolled students' count
         const fetchStudData = async () => {
             try {
               const response_student = await axios.get('http://localhost:3000/Student/studentCount',{headers: {
@@ -45,10 +47,9 @@ const Dashboard = () => {
 
     return (
         <div>
-       <p>Total enrolled students: {dataenroll.result}</p>
-       <p>Students vaccinated: {datacount.result}</p>
-
-         <p>Upcoming Drive on: {upcomVac.date}</p>
+        <p>Total enrolled students: {dataenroll.result}</p>
+        <p>Students vaccinated: {datacount.result}</p>
+        <p>Upcoming Drive on: {upcomVac.date}</p>
         </div>
       );
 

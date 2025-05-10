@@ -8,6 +8,7 @@ function AddStudent() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  //declare basic auth headers to pass in the CRUD operations
   const username = 'admin';
   const password = 'password123';
   const base64Credentials = btoa(`${username}:${password}`);
@@ -25,7 +26,7 @@ function AddStudent() {
      console.error('Error:', error);
     });
   };
-
+  //generate form to accept user's data
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" name="Sname" placeholder="Student Name" onChange={handleChange} />

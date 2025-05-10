@@ -4,6 +4,7 @@ const router = express.Router()
 
 module.exports = router;
 
+//route to enroll new student
 router.post('/addStudent', async (req, res) => {
     const data = new Students({
         Sname: req.body.Sname,
@@ -12,6 +13,7 @@ router.post('/addStudent', async (req, res) => {
         vaccineStatus: req.body.vaccineStatus,
         vaccineDate:req.body.vaccineDate
     })
+    //check if given student id exists for respective class
     const check_id = await Students.findOne({ id: req.body.id, Sclass: req.body.Sclass });
     console.log(check_id);
     if (check_id) {
@@ -29,7 +31,7 @@ router.post('/addStudent', async (req, res) => {
     }
 }})
 
-//get all students
+//get all students records from database
 router.get('/allStudents', async (req,res) => {
     try{
         console.log(req.headers);
@@ -42,7 +44,7 @@ router.get('/allStudents', async (req,res) => {
     }
 })
 
-//get students by id
+//get students records using id from database
 router.get('/getStudent/:id', async (req, res) => {
     try {
         const item = await Students.findOne({ id: req.params.id });
@@ -58,7 +60,7 @@ router.get('/getStudent/:id', async (req, res) => {
     }
 })
 
-//show all vaccinated students
+//fetch all vaccinated students
 router.get('/vaccinated', async (req, res) => {
     try {
         const item = await Students.find({ vaccineStatus: "vaccinated" });
@@ -74,7 +76,7 @@ router.get('/vaccinated', async (req, res) => {
     }
 })
 
-//fetch vaccination count
+//fetch vaccinated students' count
 router.get('/vaccinationCount', async (req, res) => {
     try {
         const result = await Students.countDocuments({ "vaccineStatus":"vaccinated" });
@@ -108,6 +110,7 @@ router.get('/studentCount', async (req, res) => {
     }
 }) 
 
+//fetch student based on name
 router.get('/getStudent/:name', async (req, res) => {
     try {
         const item = await Students.findOne({ Sname: req.params.name });
@@ -122,7 +125,7 @@ router.get('/getStudent/:name', async (req, res) => {
         res.status(404).json({message: error.message})
     }
 })
-
+//remove student from drive
 router.delete('/removeStudent/:id', async (req, res) => {
    try {
            const data = await Students.findOneAndDelete({ id: req.params.id })
@@ -134,6 +137,7 @@ router.delete('/removeStudent/:id', async (req, res) => {
     }
 })
 
+//update student record based on unique id
 router.put('/updateStudent/:id', async (req, res) => {
     try {
         const updatedData = req.body;
